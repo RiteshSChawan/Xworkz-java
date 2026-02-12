@@ -5,7 +5,11 @@ class LaptopExecutor {
         boolean ref = Laptop.onOrOff();
         System.out.println("Laptop status: " + ref);
 
-        boolean ref1 = Laptop.onOrOff();
-        System.out.println("Laptop status: " + ref1);
+        Laptop.increaseBrightness();
+        Laptop.increaseBrightness();
+        Laptop.decreaseBrightness();
+
+        ref = Laptop.onOrOff();
+        System.out.println("Laptop status: " + ref);
     }
 }

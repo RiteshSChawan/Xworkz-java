@@ -5,7 +5,14 @@ class CameraExecutor {
         boolean ref = Camera.onOrOff();
         System.out.println("Camera status: " + ref);
 
-        boolean ref1 = Camera.onOrOff();
-        System.out.println("Camera status: " + ref1);
+        Camera.zoomIn();
+        Camera.zoomIn();
+        Camera.zoomIn();
+        Camera.zoomOut();
+        Camera.zoomOut();
+        Camera.zoomIn();
+
+        ref = Camera.onOrOff();
+        System.out.println("Camera status: " + ref);
     }
 }

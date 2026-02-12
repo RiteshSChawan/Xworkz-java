@@ -5,7 +5,14 @@ class FanExecutor {
         boolean ref = Fan.onOrOff();
         System.out.println("Fan status: " + ref);
 
-        boolean ref1 = Fan.onOrOff();
-        System.out.println("Fan status: " + ref1);
+        Fan.increaseSpeed();
+        Fan.increaseSpeed();
+        Fan.increaseSpeed();
+        Fan.decreaseSpeed();
+        Fan.increaseSpeed();
+        Fan.decreaseSpeed();
+
+        ref = Fan.onOrOff();
+        System.out.println("Fan status: " + ref);
     }
 }

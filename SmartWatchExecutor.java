@@ -5,7 +5,11 @@ class SmartWatchExecutor {
         boolean ref = SmartWatch.onOrOff();
         System.out.println("Smart Watch status: " + ref);
 
-        boolean ref1 = SmartWatch.onOrOff();
-        System.out.println("Smart Watch status: " + ref1);
+        SmartWatch.increaseVolume();
+        SmartWatch.increaseVolume();
+        SmartWatch.decreaseVolume();
+
+        ref = SmartWatch.onOrOff();
+        System.out.println("Smart Watch status: " + ref);
     }
 }

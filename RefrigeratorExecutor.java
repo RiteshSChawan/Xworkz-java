@@ -5,7 +5,11 @@ class RefrigeratorExecutor {
         boolean ref = Refrigerator.onOrOff();
         System.out.println("Refrigerator status: " + ref);
 
-        boolean ref1 = Refrigerator.onOrOff();
-        System.out.println("Refrigerator status: " + ref1);
+        Refrigerator.increaseTemperature();
+        Refrigerator.increaseTemperature();
+        Refrigerator.decreaseTemperature();
+
+        ref = Refrigerator.onOrOff();
+        System.out.println("Refrigerator status: " + ref);
     }
 }

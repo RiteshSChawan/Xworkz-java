@@ -5,7 +5,11 @@ class WashingMachineExecutor {
         boolean ref = WashingMachine.onOrOff();
         System.out.println("Washing Machine status: " + ref);
 
-        boolean ref1 = WashingMachine.onOrOff();
-        System.out.println("Washing Machine status: " + ref1);
+        WashingMachine.increaseWashLevel();
+        WashingMachine.increaseWashLevel();
+        WashingMachine.decreaseWashLevel();
+
+        ref = WashingMachine.onOrOff();
+        System.out.println("Washing Machine status: " + ref);
     }
 }

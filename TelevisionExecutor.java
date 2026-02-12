@@ -5,7 +5,11 @@ class TelevisionExecutor {
         boolean ref = Television.onOrOff();
         System.out.println("Television status: " + ref);
 
-        boolean ref1 = Television.onOrOff();
-        System.out.println("Television status: " + ref1);
+        Television.increaseVolume();
+        Television.increaseVolume();
+        Television.decreaseVolume();
+
+        ref = Television.onOrOff();
+        System.out.println("Television status: " + ref);
     }
 }

@@ -5,7 +5,11 @@ class MicrowaveExecutor {
         boolean ref = Microwave.onOrOff();
         System.out.println("Microwave status: " + ref);
 
-        boolean ref1 = Microwave.onOrOff();
-        System.out.println("Microwave status: " + ref1);
+        Microwave.increaseTime();
+        Microwave.increaseTime();
+        Microwave.decreaseTime();
+
+        ref = Microwave.onOrOff();
+        System.out.println("Microwave status: " + ref);
     }
 }

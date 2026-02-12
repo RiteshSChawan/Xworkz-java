@@ -5,7 +5,14 @@ class AirConditionerExecutor {
         boolean ref = AirConditioner.onOrOff();
         System.out.println("AC status: " + ref);
 
-        boolean ref1 = AirConditioner.onOrOff();
-        System.out.println("AC status: " + ref1);
+        AirConditioner.increaseTemperature();
+		AirConditioner.increaseTemperature();
+		AirConditioner.increaseTemperature();
+		AirConditioner.decreaseTemperature();
+		AirConditioner.increaseTemperature();
+		AirConditioner.decreaseTemperature();
+			
+		ref = AirConditioner.onOrOff();
+        System.out.println("AC status: " + ref);
     }
 }
