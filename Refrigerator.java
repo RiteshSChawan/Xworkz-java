@@ -1,17 +1,62 @@
 class Refrigerator {
-    public static void main(String[] args) {
-        System.out.println("Refrigerator");
-        System.out.println("A refrigerator keeps food fresh.");
-        System.out.println("It works using electricity.");
-        System.out.println("Refrigerators are used in kitchens.");
-        System.out.println("They prevent food spoilage.");
-        System.out.println("Refrigerators store vegetables.");
-        System.out.println("They have cooling systems.");
-        System.out.println("Milk is stored in refrigerators.");
-        System.out.println("They increase food life.");
-        System.out.println("Refrigerators have shelves.");
-        System.out.println("They come in different sizes.");
-        System.out.println("Refrigerators are very useful.");
-        System.out.println("Every home has a refrigerator.");
+
+    static String getBrand(){
+        return "Whirlpool";
+    }
+
+    static int getPrice(){
+        return 32490;
+    }
+
+    static String getModel(){
+        return "IF INV 355 TITAN STEEL(3S) CONV";
+    }
+
+    static String getCapacity(){
+        return "308 Litres";
+    }
+
+    static String getFreshFoodCapacity(){
+        return "235 Litres";
+    }
+
+    static String getFreezerCapacity(){
+        return "73 Litres";
+    }
+
+    static String getInstallationType(){
+        return "Freestanding";
+    }
+
+    static String getFormFactor(){
+        return "Convertible";
+    }
+
+    static String getSpecialFeatures(){
+        return "Door Lock";
+    }
+
+    static String getColour(){
+        return "TITAN STEEL 308 L";
+    }
+
+    static String getVoltage(){
+        return "230 Volts";
+    }
+
+    static String getDefrostSystem(){
+        return "Frost Free";
+    }
+
+    static int getNumberOfShelves(){
+        return 4;
+    }
+
+    static String getShelfType(){
+        return "Toughened Glass";
+    }
+
+    static String getCountryOfOrigin(){
+        return "India";
     }
 }

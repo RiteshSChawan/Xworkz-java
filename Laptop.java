@@ -1,17 +1,62 @@
 class Laptop {
-    public static void main(String[] args) {
-        System.out.println("Laptop");
-        System.out.println("A laptop is an electronic device.");
-        System.out.println("It is used for studying and work.");
-        System.out.println("Laptops are portable computers.");
-        System.out.println("They work on electricity.");
-        System.out.println("A laptop has a screen.");
-        System.out.println("It has a keyboard and mouse pad.");
-        System.out.println("Laptops are used by students.");
-        System.out.println("They help in online learning.");
-        System.out.println("Laptops store data.");
-        System.out.println("They run many applications.");
-        System.out.println("Laptops are easy to carry.");
-        System.out.println("They are very useful devices.");
+
+    static String getBrand(){
+        return "Generic";
+    }
+
+    static int getPrice(){
+        return 29999;
+    }
+
+    static String getSeries(){
+        return "Dell_Laptop 5320-16-512";
+    }
+
+    static String getColour(){
+        return "Black";
+    }
+
+    static double getScreenSize(){
+        return 13.3;
+    }
+
+    static String getResolution(){
+        return "1920 x 1080 Pixels";
+    }
+
+    static String getProcessor(){
+        return "Intel Core i7-1165G7";
+    }
+
+    static String getProcessorSpeed(){
+        return "3 GHz";
+    }
+
+    static String getMemory(){
+        return "DDR4, Up to 32 GB";
+    }
+
+    static String getStorage(){
+        return "512 GB SSD";
+    }
+
+    static String getGraphics(){
+        return "Intel Iris Xe Graphics";
+    }
+
+    static String getOperatingSystem(){
+        return "Windows 10 Pro";
+    }
+
+    static String getConnectivity(){
+        return "Wi-Fi";
+    }
+
+    static String getCountryOfOrigin(){
+        return "China";
+    }
+
+    static double getItemWeight(){
+        return 1.61;
     }
 }
