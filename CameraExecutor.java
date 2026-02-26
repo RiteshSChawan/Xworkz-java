@@ -1,0 +1,83 @@
+
+class CameraExecutor{
+	public static void main(String[] camera){
+		boolean isValidate=Camera.createCamera("Ricoh","GR III",86999,24,false,"28mm",102400,257.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Canon","EOS 1500D",45999,24,true,"18-55mm",6400,475.5,true,"Black" );
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Nikon","D5600",52999,24,true,"18-140mm",25600,465.0,true,"Red");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Sony","Alpha A6000",48999,24,false,"16-50mm",51200,344.0,true,"Silver");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Fujifilm","XT200",55999,24,false,"15-45mm",25600,370.0,true,"Blue");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Panasonic","Lumix G7",44999,16,false,"14-42mm",25600,410.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Canon","EOS 90D",99999,32,true,"18-135mm",51200,701.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Nikon","D3500",39999,24,true,"18-55mm",25600,415.0,false,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Sony","A7 III",149999,24,false,"28-70mm",204800,650.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Leica","Q2",399999,47,false,"28mm",50000,734.0,true,"Gray");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Olympus","OM-D E-M10",57999,16,false,"14-42mm",25600,396.0,true,"Silver");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera(null,"EOS Rebel T7",46999,24,true,"18-55mm",6400,475.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("","D7500",89999,20,true,"18-140mm",51200,720.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Canon",null,74999,26,true,"24-105mm",40000,600.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Nikon","",65999,21,true,"18-55mm",25600,500.0,false,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Sony","ZV-E10",69999,24,false,null,51200,343.0,true,"White");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Fujifilm","X-S10",89999,26,false,"",51200,465.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Panasonic","GH5",129999,20,false,"12-60mm",25600,725.0,true,null);
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Canon","EOS R6",199999,20,false,"24-105mm",102400,680.0,true,"");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Nikon","Z50",85999,20,false,"16-50mm",51200,450.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Sony","A6400",94999,24,false,"16-50mm",102400,403.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera(null,null,30000,18,true,null,12800,500.0,false,null);
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("","",25000,16,true,"",6400,480.0,false,"");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Kodak","PixPro",19999,16,false,"Fixed",3200,200.0,false,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("GoPro","Hero 10",49999,23,false,"Ultra Wide",6400,153.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Canon","EOS 5D",189999,30,true,"24-70mm",32000,890.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Nikon","D850",229999,45,true,"24-120mm",25600,915.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Sony","RX100",74999,20,false,"24-70mm",12800,299.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Fujifilm","X-T4",159999,26,false,"16-80mm",51200,607.0,true,"Silver");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Panasonic","S5",169999,24,false,"20-60mm",51200,714.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Canon","EOS M50",57999,24,false,"15-45mm",25600,387.0,true,"White");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Nikon","Coolpix B500",24999,16,false,"40x Zoom",6400,542.0,true,"Purple");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Sony","A1",559999,50,false,"24-70mm",102400,737.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Canon","EOS R5",329999,45,false,"24-105mm",102400,738.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Nikon","Z9",499999,45,false,"24-70mm",204800,1340.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Sony","FX3",389999,12,false,"Cinema Lens",409600,715.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Canon","EOS 200D",44999,24,true,"18-55mm",25600,453.0,true,"Black");
+		Camera.getCameraDetails();
+		isValidate=Camera.createCamera("Nikon","D780",149999,24,true,"24-120mm",51200,840.0,true,"Black");
+		Camera.getCameraDetails();
+		
+	}
+}
+	
