@@ -1,28 +1,22 @@
-class Government {
-	int govtId;
-	String govtName;
-	String country;
-	int ministries;
-	boolean isDemocratic;
-	Policy policy;
-	
-	public Government(int govtId, String govtName, String country, int ministries, boolean isDemocratic, Policy policy) {
-		this.govtId = govtId;
-		this.govtName = govtName;
-		this.country = country;
-		this.ministries = ministries;
-		this.isDemocratic = isDemocratic;
-		this.policy = policy;
-	}
-	
-	public void getGovernmentDetails() {
-		System.out.println("Government Details:");
-		System.out.println("GovtId: " + govtId);
-		System.out.println("GovtName: " + govtName);
-		System.out.println("Country: " + country);
-		System.out.println("Ministries: " + ministries);
-		System.out.println("IsDemocratic: " + isDemocratic);
-		this.policy.getPolicyDetails();
-		System.out.println("----------------");
-	}
+public class Government {
+    private String competitiveExamNames[] = new String[9];
+    int index;
+
+    public boolean addExam(String exam) {
+        boolean isExam = false;
+        if (exam != null && !exam.isEmpty()) {
+            competitiveExamNames[index] = exam;
+            index++;
+            isExam = true;
+        } else {
+            System.out.println(exam + " is invalid");
+        }
+        return isExam;
+    }
+
+    public void getExams() {
+        System.out.println(" Government Competitive Exams ");
+        for (String exam : competitiveExamNames)
+            System.out.println(exam);
+    }
 }

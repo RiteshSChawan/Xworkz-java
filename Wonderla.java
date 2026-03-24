@@ -1,28 +1,22 @@
-class Wonderla {
-	int wonderlaId;
-	String parkName;
-	String location;
-	int totalRides;
-	double ticketPrice;
-	LazyPool lazyPool;
+public class Wonderla {
+    private String waterGames[] = new String[20];
+    int index;
 
-	public Wonderla(int wonderlaId, String parkName, String location, int totalRides, double ticketPrice, LazyPool lazyPool) {
-		this.wonderlaId = wonderlaId;
-		this.parkName = parkName;
-		this.location = location;
-		this.totalRides = totalRides;
-		this.ticketPrice = ticketPrice;
-		this.lazyPool = lazyPool;
-	}
-	
-	public void getWonderlaDetails() {
-		System.out.println("Wonderla Details:");
-		System.out.println("Wonderla Id: " + wonderlaId);
-		System.out.println("Park Name: " + parkName);
-		System.out.println("Location: " + location);
-		System.out.println("Total Rides: " + totalRides);
-		System.out.println("Ticket Price: " + ticketPrice);
-		this.lazyPool.getPoolDetails();
-		System.out.println("----------------");
-	}
+    public boolean addWaterGame(String game) {
+        boolean isGame = false;
+        if (game != null && !game.isEmpty()) {
+            waterGames[index] = game;
+            index++;
+            isGame = true;
+        } else {
+            System.out.println(game + " is invalid");
+        }
+        return isGame;
+    }
+
+    public void getWaterGames() {
+        System.out.println(" Wonderla Water Games ");
+        for (String game : waterGames)
+            System.out.println(game);
+    }
 }
