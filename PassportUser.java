@@ -1,60 +1,69 @@
-public class PassportUser {  // Encapsulation
+class PassportUser {
 
-    private int passportId;
-    private String holderName;
-    private String nationality;
-    private String dateOfBirth;
-    private String issuedOn;
-    private String expiresOn;
-    private String visaType;
+	private String passportNumber;
+	private String firstName;
+	private String lastName;
+	private String dateOfBirth;
+	private String issueDate;
+	private String expiryDate;
+	private String placeOfIssue;
 
-    public void setPassportId(int passportId) {
-        this.passportId = passportId;
-    }
-    public int getPassportId() {
-        return this.passportId;
-    }
 
-    public void setHolderName(String holderName) {
-        this.holderName = holderName;
-    }
-    public String getHolderName() {
-        return this.holderName;
-    }
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-    public String getNationality() {
-        return this.nationality;
-    }
+	public void setPassportNumber(String passportNumber) { 
+		this.passportNumber = passportNumber; 
+	}
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-    public String getDateOfBirth() {
-        return this.dateOfBirth;
-    }
+	public String getPassportNumber() { 
+		return this.passportNumber; 
+	}
 
-    public void setIssuedOn(String issuedOn) {
-        this.issuedOn = issuedOn;
-    }
-    public String getIssuedOn() {
-        return this.issuedOn;
-    }
+	public void setFirstName(String firstName) { 
+		this.firstName = firstName; 
+	}
 
-    public void setExpiresOn(String expiresOn) {
-        this.expiresOn = expiresOn;
-    }
-    public String getExpiresOn() {
-        return this.expiresOn;
-    }
+	public String getFirstName() { 
+		return this.firstName; 
+	}
 
-    public void setVisaType(String visaType) {
-        this.visaType = visaType;
-    }
-    public String getVisaType() {
-        return this.visaType;
-    }
+	public void setLastName(String lastName) { 
+		this.lastName = lastName; 
+	}
+
+	public String getLastName() { 
+		return this.lastName; 
+	}
+
+	public void setDateOfBirth(String dateOfBirth) { 
+		this.dateOfBirth = dateOfBirth; 
+	}
+
+	public String getDateOfBirth() { 
+		return this.dateOfBirth; 
+	}
+
+	public void setIssueDate(String issueDate) { 
+		this.issueDate = issueDate; 
+	}
+
+	public String getIssueDate() { 
+		return this.issueDate; 
+	}
+
+	public void setExpiryDate(String expiryDate) { 
+		this.expiryDate = expiryDate; 
+	}
+
+	public String getExpiryDate() { 
+		return this.expiryDate; 
+	}
+
+	public void setPlaceOfIssue(String placeOfIssue) { 
+		this.placeOfIssue = placeOfIssue; 
+	}
+
+	public String getPlaceOfIssue() { 
+		return this.placeOfIssue; 
+	}
 
 }

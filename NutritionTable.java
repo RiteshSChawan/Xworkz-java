@@ -1,60 +1,67 @@
-public class NutritionTable {  // Encapsulation
+class NutritionTable {
 
-    private int nutritionId;
-    private String foodName;
-    private String calories;
-    private String protein;
-    private String carbohydrates;
-    private String fat;
-    private String vitamins;
+	private String foodItem;
+	private String servingSize;
+	private double calories;
+	private double protein;
+	private double carbohydrates;
+	private double fats;
+	private String vitamins;
 
-    public void setNutritionId(int nutritionId) {
-        this.nutritionId = nutritionId;
-    }
-    public int getNutritionId() {
-        return this.nutritionId;
-    }
+	public void setFoodItem(String foodItem) { 
+		this.foodItem = foodItem; 
+	}
 
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
-    }
-    public String getFoodName() {
-        return this.foodName;
-    }
+	public String getFoodItem() { 
+		return this.foodItem; 
+	}
 
-    public void setCalories(String calories) {
-        this.calories = calories;
-    }
-    public String getCalories() {
-        return this.calories;
-    }
+	public void setServingSize(String servingSize) { 
+		this.servingSize = servingSize; 
+	}
 
-    public void setProtein(String protein) {
-        this.protein = protein;
-    }
-    public String getProtein() {
-        return this.protein;
-    }
+	public String getServingSize() { 
+		return this.servingSize; 
+	}
 
-    public void setCarbohydrates(String carbohydrates) {
-        this.carbohydrates = carbohydrates;
-    }
-    public String getCarbohydrates() {
-        return this.carbohydrates;
-    }
+	public void setCalories(double calories) { 
+		this.calories = calories; 
+	}
 
-    public void setFat(String fat) {
-        this.fat = fat;
-    }
-    public String getFat() {
-        return this.fat;
-    }
+	public double getCalories() { 
+		return this.calories; 
+	}
 
-    public void setVitamins(String vitamins) {
-        this.vitamins = vitamins;
-    }
-    public String getVitamins() {
-        return this.vitamins;
-    }
+	public void setProtein(double protein) { 
+		this.protein = protein; 
+	}
+
+	public double getProtein() { 
+		return this.protein; 
+	}
+
+	public void setCarbohydrates(double carbohydrates) { 
+		this.carbohydrates = carbohydrates; 
+	}
+
+	public double getCarbohydrates() { 
+		return this.carbohydrates; 
+	}
+
+	public void setFats(double fats) { 
+		this.fats = fats; 
+	}
+
+	public double getFats() { 
+		return this.fats; 
+	}
+
+	public void setVitamins(String vitamins) { 
+		this.vitamins = vitamins; 
+	}
+
+	public String getVitamins() { 
+		return this.vitamins; 
+	}
 
 }

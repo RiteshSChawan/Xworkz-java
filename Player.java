@@ -1,60 +1,67 @@
-public class Player {  // Encapsulation
+class Player {
 
-    private int playerId;
-    private String playerName;
-    private String team;
-    private String position;
-    private String nationality;
-    private String dateOfBirth;
-    private String jerseyNumber;
+	private String playerName;
+	private String sport;
+	private int age;
+	private String teamName;
+	private int matchesPlayed;
+	private String role;
+	private String nationality;
 
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
-    }
-    public int getPlayerId() {
-        return this.playerId;
-    }
+	public void setPlayerName(String playerName) { 
+		this.playerName = playerName; 
+	}
 
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-    public String getPlayerName() {
-        return this.playerName;
-    }
+	public String getPlayerName() { 
+		return this.playerName; 
+	}
 
-    public void setTeam(String team) {
-        this.team = team;
-    }
-    public String getTeam() {
-        return this.team;
-    }
+	public void setSport(String sport) { 
+		this.sport = sport; 
+	}
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
-    public String getPosition() {
-        return this.position;
-    }
+	public String getSport() { 
+		return this.sport; 
+	}
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-    public String getNationality() {
-        return this.nationality;
-    }
+	public void setAge(int age) { 
+		this.age = age; 
+	}
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-    public String getDateOfBirth() {
-        return this.dateOfBirth;
-    }
+	public int getAge() { 
+		return this.age; 
+	}
 
-    public void setJerseyNumber(String jerseyNumber) {
-        this.jerseyNumber = jerseyNumber;
-    }
-    public String getJerseyNumber() {
-        return this.jerseyNumber;
-    }
+	public void setTeamName(String teamName) { 
+		this.teamName = teamName; 
+	}
+
+	public String getTeamName() { 
+		return this.teamName; 
+	}
+
+	public void setMatchesPlayed(int matchesPlayed) { 
+		this.matchesPlayed = matchesPlayed; 
+	}
+
+	public int getMatchesPlayed() { 
+		return this.matchesPlayed; 
+	}
+
+	public void setRole(String role) { 
+		this.role = role; 
+	}
+
+	public String getRole() { 
+		return this.role; 
+	}
+
+	public void setNationality(String nationality) { 
+		this.nationality = nationality; 
+	}
+
+	public String getNationality() { 
+		return this.nationality; 
+	}
 
 }

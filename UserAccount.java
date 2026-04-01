@@ -1,12 +1,11 @@
-public class UserAccount {  // Encapsulation
-
+class UserAccount {
     private int userId;
-    private String username;
+    private String userName;
     private String email;
-    private String password;
-    private String phoneNumber;
-    private String createdOn;
-    private String accountType;
+    private String mobileNumber;
+    private String state;
+    private String accountStatus;
+    private String lastLogin;
 
     public void setUserId(int userId) {
         this.userId = userId;
@@ -14,47 +13,40 @@ public class UserAccount {  // Encapsulation
     public int getUserId() {
         return this.userId;
     }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
-    public String getUsername() {
-        return this.username;
+    public String getUserName() {
+        return this.userName;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
     public String getEmail() {
         return this.email;
     }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
-    public String getPassword() {
-        return this.password;
+    public String getMobileNumber() {
+        return this.mobileNumber;
     }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setState(String state) {
+        this.state = state;
     }
-    public String getPhoneNumber() {
-        return this.phoneNumber;
+    public String getState() {
+        return this.state;
     }
-
-    public void setCreatedOn(String createdOn) {
-        this.createdOn = createdOn;
+    public void setAccountStatus(String accountStatus) {
+        this.accountStatus = accountStatus;
     }
-    public String getCreatedOn() {
-        return this.createdOn;
+    public String getAccountStatus() {
+        return this.accountStatus;
     }
-
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
+    public void setLastLogin(String lastLogin) {
+        this.lastLogin = lastLogin;
     }
-    public String getAccountType() {
-        return this.accountType;
+    public String getLastLogin() {
+        return this.lastLogin;
     }
-
 }
