@@ -1,35 +1,28 @@
+import java.util.Scanner;
 class KettleExecutor {
-
-    public static void main(String[] h) {
-
+    public static void main(String[] args) {
         Kettle kettle = new Kettle();
+        Scanner sc = new Scanner(System.in);
 
-        boolean isAdded = kettle.addName("ElectricKettle");
-        System.out.println("Name is added " + isAdded);
+        for (int index = 0; index < kettle.names.length; index++) {
+            System.out.println("Enter Kettle name : ");
+            String kettleName = sc.nextLine();
+            kettle.addKettleName(kettleName);
+        }
+        kettle.getKettleDetails();
+        sc.close();
 
-        kettle.addName("SteelKettle");
-        kettle.addName("GlassKettle");
-        kettle.addName("TravelKettle");
-        kettle.addName("WhistleKettle");
-        kettle.addName("CopperKettle");
-        kettle.addName("CeramicKettle");
-        kettle.addName("MiniKettle");
-        kettle.addName("SmartKettle");
-        kettle.addName("PortableKettle");
+        String names[] = {"ElectricKettle", "WhistlingKettle", "StoveKettle", "TravelKettle", "GlassKettle"};
+        System.out.println("Is names added through array " + kettle.addKettleNames(names));
+        kettle.getKettleDetails();
 
-        kettle.fetchNames();
-
-        boolean isFound = kettle.search("GlassKettle");
+        boolean isFound = kettle.searchKettle("GlassKettle");
         System.out.println("is found " + isFound);
-
-        boolean isUpdate = kettle.update("MiniKettle", "UltraMiniKettle");
-        System.out.println("is update " + isUpdate);
-
-        kettle.fetchNames();
-
-        boolean isDelete = kettle.delete("CopperKettle");
-        System.out.println("is delete " + isDelete);
-
-        kettle.fetchNames();
+        boolean isUpdated = kettle.updateKettle("TravelKettle", "PortableTravelKettle");
+        System.out.println("is updated " + isUpdated);
+        kettle.getKettleDetails();
+        boolean isDeleted = kettle.deleteKettle("WhistlingKettle");
+        System.out.println("is deleted " + isDeleted);
+        kettle.getKettleDetails();
     }
 }

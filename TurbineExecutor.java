@@ -1,35 +1,28 @@
+import java.util.Scanner;
 class TurbineExecutor {
-
-    public static void main(String[] h) {
-
+    public static void main(String[] args) {
         Turbine turbine = new Turbine();
+        Scanner sc = new Scanner(System.in);
 
-        boolean isAdded = turbine.addName("SteamTurbine");
-        System.out.println("Name is added " + isAdded);
+        for (int index = 0; index < turbine.names.length; index++) {
+            System.out.println("Enter Turbine name : ");
+            String turbineName = sc.nextLine();
+            turbine.addTurbineName(turbineName);
+        }
+        turbine.getTurbineDetails();
+        sc.close();
 
-        turbine.addName("GasTurbine");
-        turbine.addName("WindTurbine");
-        turbine.addName("HydroTurbine");
-        turbine.addName("ImpulseTurbine");
-        turbine.addName("ReactionTurbine");
-        turbine.addName("JetTurbine");
-        turbine.addName("MicroTurbine");
-        turbine.addName("PowerTurbine");
-        turbine.addName("AxialTurbine");
+        String names[] = {"WindTurbine", "SteamTurbine", "GasTurbine", "HydroTurbine", "MicroTurbine"};
+        System.out.println("Is names added through array " + turbine.addTurbineNames(names));
+        turbine.getTurbineDetails();
 
-        turbine.fetchNames();
-
-        boolean isFound = turbine.search("WindTurbine");
+        boolean isFound = turbine.searchTurbine("GasTurbine");
         System.out.println("is found " + isFound);
-
-        boolean isUpdate = turbine.update("JetTurbine", "TurboJet");
-        System.out.println("is update " + isUpdate);
-
-        turbine.fetchNames();
-
-        boolean isDelete = turbine.delete("ImpulseTurbine");
-        System.out.println("is delete " + isDelete);
-
-        turbine.fetchNames();
+        boolean isUpdated = turbine.updateTurbine("WindTurbine", "OffshoreWindTurbine");
+        System.out.println("is updated " + isUpdated);
+        turbine.getTurbineDetails();
+        boolean isDeleted = turbine.deleteTurbine("MicroTurbine");
+        System.out.println("is deleted " + isDeleted);
+        turbine.getTurbineDetails();
     }
 }

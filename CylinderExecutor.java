@@ -1,27 +1,30 @@
-class CylinderExecutor{
-	public static void main(String[] h){
-		Cylinder cyliner= new Cylinder();
-		boolean isAdded = cyliner.addName("LPG");
-		System.out.println("Name is added "+isAdded);
-		cyliner.addName("Indian");
-		cyliner.addName("Bharath");
-		cyliner.addName("HP");
-		cyliner.addName("Reliance");
-		cyliner.addName("Go");
-		cyliner.addName("Shivgas");
-		cyliner.addName("Jyothi");
-		cyliner.addName("Essar");
-		cyliner.addName("Super");
-		cyliner.addName("Super");
-		cyliner.fetchNames();
-		cyliner.update("Go","KD");
-		boolean isUpdate = cyliner.update("LPG","gobar");
-		System.out.println("is update "+isUpdate);
+import java.util.Scanner;
+class CylinderExecutor {
+    public static void main(String[] args) {
+        Cylinder cylinder = new Cylinder();
+        Scanner sc = new Scanner(System.in);
+
+        for (int index = 0; index < cylinder.names.length; index++) {
+            System.out.println("Enter Cylinder name : ");
+            String cylinderName = sc.nextLine();
+            cylinder.addCylinderName(cylinderName);
+        }
+        cylinder.getCylinderDetails();
+        sc.close();
+
+        String names[] = {"GasCylinder", "OxygenCylinder", "HydrogenCylinder", "LPGCylinder", "AirCylinder"};
+        System.out.println("Is names added through array " + cylinder.addCylinderNames(names));
+        cylinder.getCylinderDetails();
+
+        boolean isFound = cylinder.searchCylinder("OxygenCylinder");
+        System.out.println("is found " + isFound);
 		
-		cyliner.fetchNames();
-		boolean isDelete = cyliner.delete("Jyothi");
-		System.out.println("is delete "+isDelete);
-		cyliner.fetchNames();
+        boolean isUpdated = cylinder.updateCylinder("LPGCylinder", "ModernLPGCylinder");
+        System.out.println("is updated " + isUpdated);
+        cylinder.getCylinderDetails();
 		
-	}
+        boolean isDeleted = cylinder.deleteCylinder("AirCylinder");
+        System.out.println("is deleted " + isDeleted);
+        cylinder.getCylinderDetails();
+    }
 }

@@ -3,7 +3,7 @@ class Bed {
     String names[] = new String[10];
     int index;
 
-    public boolean addName(String name) {
+    public boolean addBedName(String name) {
         boolean isAdded = false;
 
         if (name != null && !name.isEmpty()) {
@@ -11,16 +11,28 @@ class Bed {
                 names[index++] = name;
                 isAdded = true;
             } else {
-                System.out.println("The Names array is full");
+                System.out.println("The array is full");
             }
         } else {
-            System.out.println("Invalid Input..");
+            System.out.println("Invalid Input");
         }
 
         return isAdded;
     }
+	
+	public boolean addBedNames(String[] names){
+		boolean isNamesAdded =false;
+		if(names.length <= this.names.length){
+			this.names=names;
+			isNamesAdded=true;
+		}else {
+            System.out.println("Invalid Input");
+        }
+		
+	return isNamesAdded;
+	}
 
-    public void fetchNames() {
+    public void getBedDetails() {
         System.out.println("Name of the beds are");
         for (String name : names) {
             if (name == null) {
@@ -29,22 +41,20 @@ class Bed {
                 System.out.println(name);
             }
         }
-        System.out.println(".......................................");
+        System.out.println();
     }
 
-    public boolean search(String searchName) {
+    public boolean searchBed(String searchBedName) {
         boolean isFound = false;
 
-        if (searchName != null && !searchName.isEmpty()) {
+        if (searchBedName != null && !searchBedName.isEmpty()) {
             for (String name : names) {
-                if (searchName.equals(name)) {
-                    System.out.println(searchName + " found");
+                if (searchBedName.equals(name)) {
+                    System.out.println(searchBedName + " found");
                     isFound = true;
-                }
-            }
-
-            if (!isFound) {
+                }else{
                 System.out.println("Name not found");
+				}
             }
         } else {
             System.out.println("Invalid Input..");
@@ -53,38 +63,36 @@ class Bed {
         return isFound;
     }
 
-    public boolean update(String existingName, String updateName) {
-        boolean isUpdate = false;
+    public boolean updateBed(String existingName, String updateName) {
+        boolean isUpdated = false;
         int index = 0;
 
         if (updateName != null && !updateName.isEmpty()) {
             for (String name : names) {
                 if (existingName.equals(name)) {
                     names[index] = updateName;
-                    isUpdate = true;
+                    isUpdated = true;
                 }
                 index++;
             }
 
-            if (isUpdate == false) {
-                System.out.println("The name is not found");
-            }
+            if (!isUpdated) System.out.println("The name is not found");
         } else {
             System.out.println("Invalid Input..");
         }
 
-        return isUpdate;
+        return isUpdated;
     }
 
-    public boolean delete(String deleteName) {
-        boolean isDelete = false;
+    public boolean deleteBed(String deleteName) {
+        boolean isDeleted = false;
         int index = 0;
 
         if (deleteName != null && !deleteName.isEmpty()) {
             for (String name : names) {
                 if (deleteName.equals(name)) {
                     names[index] = null;
-                    isDelete = true;
+                    isDeleted = true;
                 }
                 index++;
             }
@@ -92,6 +100,6 @@ class Bed {
             System.out.println("Invalid Input..");
         }
 
-        return isDelete;
+        return isDeleted;
     }
 }

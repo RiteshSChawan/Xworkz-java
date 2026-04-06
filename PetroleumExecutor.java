@@ -1,35 +1,28 @@
+import java.util.Scanner;
 class PetroleumExecutor {
-
-    public static void main(String[] h) {
-
+    public static void main(String[] args) {
         Petroleum petroleum = new Petroleum();
+        Scanner sc = new Scanner(System.in);
 
-        boolean isAdded = petroleum.addName("Petrol");
-        System.out.println("Name is added " + isAdded);
+        for (int index = 0; index < petroleum.names.length; index++) {
+            System.out.println("Enter Petroleum name : ");
+            String petroleumName = sc.nextLine();
+            petroleum.addPetroleumName(petroleumName);
+        }
+        petroleum.getPetroleumDetails();
+        sc.close();
 
-        petroleum.addName("Diesel");
-        petroleum.addName("Kerosene");
-        petroleum.addName("LPG");
-        petroleum.addName("CNG");
-        petroleum.addName("AviationFuel");
-        petroleum.addName("Bitumen");
-        petroleum.addName("Paraffin");
-        petroleum.addName("Naphtha");
-        petroleum.addName("Lubricant");
+        String names[] = {"CrudeOil", "Diesel", "Petrol", "Kerosene", "NaturalGas"};
+        System.out.println("Is names added through array " + petroleum.addPetroleumNames(names));
+        petroleum.getPetroleumDetails();
 
-        petroleum.fetchNames();
-
-        boolean isFound = petroleum.search("Diesel");
+        boolean isFound = petroleum.searchPetroleum("Diesel");
         System.out.println("is found " + isFound);
-
-        boolean isUpdate = petroleum.update("CNG", "BioGas");
-        System.out.println("is update " + isUpdate);
-
-        petroleum.fetchNames();
-
-        boolean isDelete = petroleum.delete("Bitumen");
-        System.out.println("is delete " + isDelete);
-
-        petroleum.fetchNames();
+        boolean isUpdated = petroleum.updatePetroleum("Kerosene", "PurifiedKerosene");
+        System.out.println("is updated " + isUpdated);
+        petroleum.getPetroleumDetails();
+        boolean isDeleted = petroleum.deletePetroleum("CrudeOil");
+        System.out.println("is deleted " + isDeleted);
+        petroleum.getPetroleumDetails();
     }
 }

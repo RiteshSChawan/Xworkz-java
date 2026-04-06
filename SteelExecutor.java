@@ -1,35 +1,28 @@
+import java.util.Scanner;
 class SteelExecutor {
-
-    public static void main(String[] h) {
-
+    public static void main(String[] args) {
         Steel steel = new Steel();
+        Scanner sc = new Scanner(System.in);
 
-        boolean isAdded = steel.addName("AlloySteel");
-        System.out.println("Name is added " + isAdded);
+        for (int index = 0; index < steel.names.length; index++) {
+            System.out.println("Enter Steel name : ");
+            String steelName = sc.nextLine();
+            steel.addSteelName(steelName);
+        }
+        steel.getSteelDetails();
+        sc.close();
 
-        steel.addName("CarbonSteel");
-        steel.addName("StainlessSteel");
-        steel.addName("ToolSteel");
-        steel.addName("MildSteel");
-        steel.addName("SpringSteel");
-        steel.addName("HighSpeedSteel");
-        steel.addName("DuplexSteel");
-        steel.addName("CastSteel");
-        steel.addName("ForgedSteel");
+        String names[] = {"StainlessSteel", "CarbonSteel", "AlloySteel", "ToolSteel", "GalvanizedSteel"};
+        System.out.println("Is names added through array " + steel.addSteelNames(names));
+        steel.getSteelDetails();
 
-        steel.fetchNames();
-
-        boolean isFound = steel.search("MildSteel");
+        boolean isFound = steel.searchSteel("CarbonSteel");
         System.out.println("is found " + isFound);
-
-        boolean isUpdate = steel.update("CastSteel", "UltraCastSteel");
-        System.out.println("is update " + isUpdate);
-
-        steel.fetchNames();
-
-        boolean isDelete = steel.delete("SpringSteel");
-        System.out.println("is delete " + isDelete);
-
-        steel.fetchNames();
+        boolean isUpdated = steel.updateSteel("AlloySteel", "HighStrengthAlloySteel");
+        System.out.println("is updated " + isUpdated);
+        steel.getSteelDetails();
+        boolean isDeleted = steel.deleteSteel("ToolSteel");
+        System.out.println("is deleted " + isDeleted);
+        steel.getSteelDetails();
     }
 }

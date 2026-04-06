@@ -1,35 +1,28 @@
+import java.util.Scanner;
 class TreeExecutor {
-
-    public static void main(String[] h) {
-
+    public static void main(String[] args) {
         Tree tree = new Tree();
+        Scanner sc = new Scanner(System.in);
 
-        boolean isAdded = tree.addName("Neem");
-        System.out.println("Name is added " + isAdded);
+        for (int index = 0; index < tree.names.length; index++) {
+            System.out.println("Enter Tree name : ");
+            String treeName = sc.nextLine();
+            tree.addTreeName(treeName);
+        }
+        tree.getTreeDetails();
+        sc.close();
 
-        tree.addName("Mango");
-        tree.addName("Coconut");
-        tree.addName("Banyan");
-        tree.addName("Peepal");
-        tree.addName("Teak");
-        tree.addName("Rosewood");
-        tree.addName("Apple");
-        tree.addName("Guava");
-        tree.addName("Pine");
+        String names[] = {"OakTree", "PineTree", "MapleTree", "BanyanTree", "PalmTree"};
+        System.out.println("Is names added through array " + tree.addTreeNames(names));
+        tree.getTreeDetails();
 
-        tree.fetchNames();
-
-        boolean isFound = tree.search("Mango");
+        boolean isFound = tree.searchTree("MapleTree");
         System.out.println("is found " + isFound);
-
-        boolean isUpdate = tree.update("Guava", "GreenGuava");
-        System.out.println("is update " + isUpdate);
-
-        tree.fetchNames();
-
-        boolean isDelete = tree.delete("Teak");
-        System.out.println("is delete " + isDelete);
-
-        tree.fetchNames();
+        boolean isUpdated = tree.updateTree("BanyanTree", "GiantBanyanTree");
+        System.out.println("is updated " + isUpdated);
+        tree.getTreeDetails();
+        boolean isDeleted = tree.deleteTree("PalmTree");
+        System.out.println("is deleted " + isDeleted);
+        tree.getTreeDetails();
     }
 }

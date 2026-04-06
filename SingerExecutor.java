@@ -1,35 +1,28 @@
+import java.util.Scanner;
 class SingerExecutor {
-
-    public static void main(String[] h) {
-
+    public static void main(String[] args) {
         Singer singer = new Singer();
+        Scanner sc = new Scanner(System.in);
 
-        boolean isAdded = singer.addName("Arijit");
-        System.out.println("Name is added " + isAdded);
+        for (int index = 0; index < singer.names.length; index++) {
+            System.out.println("Enter Singer name : ");
+            String singerName = sc.nextLine();
+            singer.addSingerName(singerName);
+        }
+        singer.getSingerDetails();
+        sc.close();
 
-        singer.addName("Sonu");
-        singer.addName("Shreya");
-        singer.addName("Lata");
-        singer.addName("Kishore");
-        singer.addName("SPB");
-        singer.addName("Sunidhi");
-        singer.addName("Armaan");
-        singer.addName("Neha");
-        singer.addName("KK");
+        String names[] = {"JazzSinger", "OperaSinger", "PopSinger", "RockSinger", "FolkSinger"};
+        System.out.println("Is names added through array " + singer.addSingerNames(names));
+        singer.getSingerDetails();
 
-        singer.fetchNames();
-
-        boolean isFound = singer.search("Lata");
+        boolean isFound = singer.searchSinger("PopSinger");
         System.out.println("is found " + isFound);
-
-        boolean isUpdate = singer.update("Neha", "NehaKakkar");
-        System.out.println("is update " + isUpdate);
-
-        singer.fetchNames();
-
-        boolean isDelete = singer.delete("SPB");
-        System.out.println("is delete " + isDelete);
-
-        singer.fetchNames();
+        boolean isUpdated = singer.updateSinger("RockSinger", "ClassicRockSinger");
+        System.out.println("is updated " + isUpdated);
+        singer.getSingerDetails();
+        boolean isDeleted = singer.deleteSinger("FolkSinger");
+        System.out.println("is deleted " + isDeleted);
+        singer.getSingerDetails();
     }
 }
