@@ -1,44 +1,73 @@
 public class Government {
     public String competitiveExamNames[] = new String[9];
     int index;
-
-    public boolean addExam(String exam) {
+    public boolean addCompetitiveExamName(String competitiveExamName) {
         boolean isAdded = false;
         if (index < competitiveExamNames.length) {
-            if (exam != null && !exam.isEmpty()) {
-                competitiveExamNames[index++] = exam;
+            if (competitiveExamName != null && !competitiveExamName.isEmpty()) {
+                competitiveExamNames[index++] = competitiveExamName;
                 isAdded = true;
-            } else System.out.println(exam + " is invalid");
+            } else System.out.println(competitiveExamName + " is invalid");
         } else
-            System.out.println("exam index is full");
+            System.out.println("competitiveExamNames index is full");
         return isAdded;
     }
-
-    public void getExamDetails() {
-        System.out.println("The exams are : \n");
+    public void getCompetitiveExamDetails() {
+        System.out.println("The competitive exams are : \n");
         for (String item : competitiveExamNames)
             if (item != null) System.out.println(item);
     }
-
-    public String getExamByIndex(int index) {
-        String exam = null;
+    public String getCompetitiveExamByIndex(int index) {
+        String competitiveExamName = null;
         if (index < competitiveExamNames.length)
-            exam = competitiveExamNames[index];
+            competitiveExamName = competitiveExamNames[index];
         else
             System.out.println("Invalid index value: " + index);
-        return exam;
+        return competitiveExamName;
     }
-
-    public int getIndexByExam(String exam) {
-        int idx = 0;
-        if (exam != null) {
+    public int getIndexByCompetitiveExam(String competitiveExamName) {
+        int index = 0;
+        if (competitiveExamName != null) {
             for (String item : competitiveExamNames) {
-                if (item != null && item.equals(exam)) {
-                    return idx;
+                if (item != null && item.equals(competitiveExamName)) {
+                    return index;
                 }
-                idx++;
+                index++;
             }
-        } else System.out.println("exam name not found: " + exam);
-        return -1;
+        } else System.out.println("competitive exam name not found: " + competitiveExamName);
+        return index;
+    }
+    public boolean updateCompetitiveExam(String existingName, String updateName) {
+        boolean isUpdated = false;
+        int index = 0;
+        if (updateName != null && !updateName.isEmpty()) {
+            for (String name : competitiveExamNames) {
+                if (existingName.equals(name)) {
+                    competitiveExamNames[index] = updateName;
+                    isUpdated = true;
+                }
+                index++;
+            }
+            if (!isUpdated) System.out.println("The name is not found");
+        } else {
+            System.out.println("Invalid Input..");
+        }
+        return isUpdated;
+    }
+    public boolean deleteCompetitiveExam(String deleteName) {
+        boolean isDeleted = false;
+        int index = 0;
+        if (deleteName != null && !deleteName.isEmpty()) {
+            for (String name : competitiveExamNames) {
+                if (deleteName.equals(name)) {
+                    competitiveExamNames[index] = null;
+                    isDeleted = true;
+                }
+                index++;
+            }
+        } else {
+            System.out.println("Invalid Input..");
+        }
+        return isDeleted;
     }
 }

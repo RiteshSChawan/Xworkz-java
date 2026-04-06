@@ -1,6 +1,8 @@
-public class ECommerceExecutor {
+import java.util.Scanner;
+class ECommerceExecutor {
     public static void main(String[] args) {
         ECommerce eCommerce = new ECommerce();
+		/*
         eCommerce.addProduct("Laptop");
         eCommerce.addProduct("Mobile Phone");
         eCommerce.addProduct("Headphones");
@@ -27,12 +29,22 @@ public class ECommerceExecutor {
         eCommerce.addProduct("Fan");
         eCommerce.addProduct("Air Purifier");
         eCommerce.addProduct("Juicer");
+        eCommerce.getProductDetails(); */
+		
+         Scanner sc = new Scanner(System.in);
+        for (int index = 0; index < eCommerce.productNames.length; index++) {
+            System.out.println("Enter product name : ");
+            eCommerce.addProductName(sc.nextLine());
+        }
         eCommerce.getProductDetails();
-        int index = 7;
-        String productByIndex = eCommerce.getProductByIndex(index);
-        System.out.println("Product at index " + index + " is: " + productByIndex);
-        String productName = "Camera";
-        int productIndex = eCommerce.getIndexByProduct(productName);
-        System.out.println("Index of " + productName + " is: " + productIndex);
+		sc.close();
+		
+        int index = 6;
+        System.out.println("Product at index " + index + " is: " + eCommerce.getProductByIndex(index));
+        System.out.println("Index of Laptop: " + eCommerce.getIndexByProduct("Laptop"));
+        System.out.println("Is updated: " + eCommerce.updateProduct("Trimmer", "Trimmers"));
+        eCommerce.getProductDetails();
+        System.out.println("Is deleted: " + eCommerce.deleteProduct("Juicer"));
+        eCommerce.getProductDetails();
     }
 }

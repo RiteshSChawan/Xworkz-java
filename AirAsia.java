@@ -30,15 +30,50 @@ public class AirAsia {
     }
 
     public int getIndexByPassenger(String passenger) {
-        int idx = 0;
+        int index = 0;
         if (passenger != null) {
             for (String item : passengers) {
                 if (item != null && item.equals(passenger)) {
-                    return idx;
+                    return index;
                 }
-                idx++;
+                index++;
             }
         } else System.out.println("passenger name not found: " + passenger);
-        return -1;
+        return index;
+    }
+	
+   public boolean updatePassenger(String existingName, String updateName) {
+        boolean isUpdated = false;
+        int index = 0;
+        if (updateName != null && !updateName.isEmpty()) {
+            for (String name : passengers) {
+                if (existingName.equals(name)) {
+                    passengers[index] = updateName;
+                    isUpdated = true;
+                }
+                index++;
+            }
+            if (!isUpdated) System.out.println("The name is not found");
+        } else {
+            System.out.println("Invalid Input..");
+        }
+        return isUpdated;
+    }
+
+    public boolean deletePassenger(String deleteName) {
+        boolean isDeleted = false;
+        int index = 0;
+        if (deleteName != null && !deleteName.isEmpty()) {
+            for (String name : passengers) {
+                if (deleteName.equals(name)) {
+                    passengers[index] = null;
+                    isDeleted = true;
+                }
+                index++;
+            }
+        } else {
+            System.out.println("Invalid Input..");
+        }
+        return isDeleted;
     }
 }

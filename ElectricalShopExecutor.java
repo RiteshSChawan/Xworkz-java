@@ -1,7 +1,8 @@
-public class ElectricalShopExecutor {
+import java.util.Scanner;
+class ElectricalShopExecutor {
     public static void main(String[] args) {
         ElectricalShop electricalShop = new ElectricalShop();
-        electricalShop.addAppliance("Ceiling Fan");
+        /* electricalShop.addAppliance("Ceiling Fan");
         electricalShop.addAppliance("Table Fan");
         electricalShop.addAppliance("LED Bulb");
         electricalShop.addAppliance("Tube Light");
@@ -21,12 +22,22 @@ public class ElectricalShopExecutor {
         electricalShop.addAppliance("Smart Plug");
         electricalShop.addAppliance("Motion Sensor");
         electricalShop.addAppliance("Timer Switch");
+        electricalShop.getApplianceDetails(); */
+		
+		Scanner sc = new Scanner(System.in);
+         for (int index = 0; index < electricalShop.appliances.length; index++) {
+            System.out.println("Enter appliance name : ");
+            electricalShop.addAppliance(sc.nextLine());
+        }
         electricalShop.getApplianceDetails();
-        int index = 2;
-        String applianceByIndex = electricalShop.getApplianceByIndex(index);
-        System.out.println("Appliance at index " + index + " is: " + applianceByIndex);
-        String applianceName = "Inverter";
-        int applianceIndex = electricalShop.getIndexByAppliance(applianceName);
-        System.out.println("Index of " + applianceName + " is: " + applianceIndex);
+		sc.close();
+		
+        int index = 3;
+        System.out.println("Appliance at index " + index + " is: " + electricalShop.getApplianceByIndex(index));
+        System.out.println("Index of LED Bulb: " + electricalShop.getIndexByAppliance("LED Bulb"));
+        System.out.println("Is updated: " + electricalShop.updateAppliance("Refrigerator", "Double Door Refrigerator"));
+        electricalShop.getApplianceDetails();
+        System.out.println("Is deleted: " + electricalShop.deleteAppliance("Ceiling Fan"));
+        electricalShop.getApplianceDetails();
     }
 }

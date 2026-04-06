@@ -1,7 +1,8 @@
-public class UniverseExecutor {
+import java.util.Scanner;
+class UniverseExecutor {
     public static void main(String[] args) {
         Universe universe = new Universe();
-        universe.addGalaxy("Milky Way");
+        /* universe.addGalaxy("Milky Way");
         universe.addGalaxy("Andromeda");
         universe.addGalaxy("Triangulum");
         universe.addGalaxy("Whirlpool");
@@ -18,12 +19,22 @@ public class UniverseExecutor {
         universe.addGalaxy("Centaurus A");
         universe.addGalaxy("NGC 1300");
         universe.addGalaxy("Messier 87");
+        universe.getGalaxyDetails(); */
+		
+		Scanner sc = new Scanner(System.in);
+         for (int index = 0; index < universe.galaxies.length; index++) {
+            System.out.println("Enter galaxy name : ");
+            universe.addGalaxy(sc.nextLine());
+        }
         universe.getGalaxyDetails();
+		sc.close();
+		
         int index = 1;
-        String galaxyByIndex = universe.getGalaxyByIndex(index);
-        System.out.println("Galaxy at index " + index + " is: " + galaxyByIndex);
-        String galaxyName = "Sombrero";
-        int galaxyIndex = universe.getIndexByGalaxy(galaxyName);
-        System.out.println("Index of " + galaxyName + " is: " + galaxyIndex);
+        System.out.println("Galaxy at index " + index + " is: " + universe.getGalaxyByIndex(index));
+        System.out.println("Index of Milky Way: " + universe.getIndexByGalaxy("Milky Way"));
+        System.out.println("Is updated: " + universe.updateGalaxy("Milky Way", "Milky Way Galaxy"));
+        universe.getGalaxyDetails();
+        System.out.println("Is deleted: " + universe.deleteGalaxy("Andromeda"));
+        universe.getGalaxyDetails();
     }
 }

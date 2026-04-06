@@ -1,21 +1,32 @@
-public class StateExecutor {
+import java.util.Scanner;
+class StateExecutor {
     public static void main(String[] args) {
         State state = new State();
-        state.addHighway("NH 44 - Srinagar to Kanyakumari");
-        state.addHighway("NH 48 - Delhi to Chennai");
-        state.addHighway("NH 19 - Delhi to Kolkata");
-        state.addHighway("NH 27 - East West Corridor");
-        state.addHighway("NH 16 - Kolkata to Chennai");
-        state.addHighway("NH 52 - Pathankot to Silchar");
-        state.addHighway("NH 30 - Sitapur to Ibrahimpur");
-        state.addHighway("NH 66 - Panvel to Kanyakumari");
-        state.addHighway("NH 75 - Gwalior to Jharkhand");
+        /* state.addHighway("NH 44 ");
+        state.addHighway("NH 48 ");
+        state.addHighway("NH 19 ");
+        state.addHighway("NH 27 ");
+        state.addHighway("NH 16");
+        state.addHighway("NH 52");
+        state.addHighway("NH 30 ");
+        state.addHighway("NH 66");
+        state.addHighway("NH 75 ");
+        state.getHighwayDetails(); */
+		
+         Scanner sc = new Scanner(System.in);
+		 for (int index = 0; index < state.highwayNames.length; index++) {
+            System.out.println("Enter highway name : ");
+            state.addHighwayName(sc.nextLine());
+        }
         state.getHighwayDetails();
+		sc.close();
+		
         int index = 1;
-        String highwayByIndex = state.getHighwayByIndex(index);
-        System.out.println("Highway at index " + index + " is: " + highwayByIndex);
-        String highwayName = "NH 27 - East West Corridor";
-        int highwayIndex = state.getIndexByHighway(highwayName);
-        System.out.println("Index of " + highwayName + " is: " + highwayIndex);
+        System.out.println("Highway at index " + index + " is: " + state.getHighwayByIndex(index));
+        System.out.println("Index of NH 44: " + state.getIndexByHighway("NH 44"));
+        System.out.println("Is updated: " + state.updateHighway("NH 44", "NH 44 - Expressway"));
+        state.getHighwayDetails();
+        System.out.println("Is deleted: " + state.deleteHighway("NH 66"));
+        state.getHighwayDetails();
     }
 }

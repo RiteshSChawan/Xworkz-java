@@ -1,7 +1,8 @@
-public class RCBExecutor {
+import java.util.Scanner;
+class RCBExecutor {
     public static void main(String[] args) {
         RCB rcb = new RCB();
-        rcb.addPlayer("Virat Kohli");
+        /* rcb.addPlayer("Virat Kohli");
         rcb.addPlayer("Faf du Plessis");
         rcb.addPlayer("Glenn Maxwell");
         rcb.addPlayer("Mohammed Siraj");
@@ -16,12 +17,22 @@ public class RCBExecutor {
         rcb.addPlayer("Reece Topley");
         rcb.addPlayer("Suyash Prabhudessai");
         rcb.addPlayer("Karn Sharma");
+        rcb.getPlayerDetails(); */
+		
+		Scanner sc = new Scanner(System.in);
+         for (int index = 0; index < rcb.playerNames.length; index++) {
+            System.out.println("Enter player name : ");
+            rcb.addPlayerName(sc.nextLine());
+        }
         rcb.getPlayerDetails();
+		sc.close();
+		
         int index = 0;
-        String playerByIndex = rcb.getPlayerByIndex(index);
-        System.out.println("Player at index " + index + " is: " + playerByIndex);
-        String playerName = "Glenn Maxwell";
-        int playerIndex = rcb.getIndexByPlayer(playerName);
-        System.out.println("Index of " + playerName + " is: " + playerIndex);
+        System.out.println("Player at index " + index + " is: " + rcb.getPlayerByIndex(index));
+        System.out.println("Index of Virat Kohli: " + rcb.getIndexByPlayer("Virat Kohli"));
+        System.out.println("Is updated: " + rcb.updatePlayer("Patidar", "Rajat Patidar"));
+        rcb.getPlayerDetails();
+        System.out.println("Is deleted: " + rcb.deletePlayer("Glenn Maxwell"));
+        rcb.getPlayerDetails();
     }
 }

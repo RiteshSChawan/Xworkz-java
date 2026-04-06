@@ -1,7 +1,8 @@
-public class TelevisionExecutor {
+import java.util.Scanner;
+class TelevisionExecutor {
     public static void main(String[] args) {
         Television television = new Television();
-        television.addChannel("Star Plus");
+        /* television.addChannel("Star Plus");
         television.addChannel("Sony TV");
         television.addChannel("Zee TV");
         television.addChannel("Colors TV");
@@ -18,12 +19,22 @@ public class TelevisionExecutor {
         television.addChannel("National Geographic");
         television.addChannel("Cartoon Network");
         television.addChannel("Pogo");
+        television.getChannelDetails(); */
+		
+		Scanner sc = new Scanner(System.in);
+         for (int index = 0; index < television.channelNames.length; index++) {
+            System.out.println("Enter channel name : ");
+            television.addChannelName(sc.nextLine());
+        }
         television.getChannelDetails();
-        int index = 6;
-        String channelByIndex = television.getChannelByIndex(index);
-        System.out.println("Channel at index " + index + " is: " + channelByIndex);
-        String channelName = "ESPN";
-        int channelIndex = television.getIndexByChannel(channelName);
-        System.out.println("Index of " + channelName + " is: " + channelIndex);
+		sc.close();
+		
+        int index = 5;
+        System.out.println("Channel at index " + index + " is: " + television.getChannelByIndex(index));
+        System.out.println("Index of Star Sports: " + television.getIndexByChannel("Star Sports"));
+        System.out.println("Is updated: " + television.updateChannel("Star Sports", "Star Sports HD"));
+        television.getChannelDetails();
+        System.out.println("Is deleted: " + television.deleteChannel("Zee TV"));
+        television.getChannelDetails();
     }
 }

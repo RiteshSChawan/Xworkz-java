@@ -1,44 +1,73 @@
 public class Goa {
     public String beachNames[] = new String[19];
     int index;
-
-    public boolean addBeach(String beach) {
+    public boolean addBeachName(String beachName) {
         boolean isAdded = false;
         if (index < beachNames.length) {
-            if (beach != null && !beach.isEmpty()) {
-                beachNames[index++] = beach;
+            if (beachName != null && !beachName.isEmpty()) {
+                beachNames[index++] = beachName;
                 isAdded = true;
-            } else System.out.println(beach + " is invalid");
+            } else System.out.println(beachName + " is invalid");
         } else
-            System.out.println("beach index is full");
+            System.out.println("beachNames index is full");
         return isAdded;
     }
-
     public void getBeachDetails() {
-        System.out.println("The beachs are : \n");
+        System.out.println("The beaches are : \n");
         for (String item : beachNames)
             if (item != null) System.out.println(item);
     }
-
     public String getBeachByIndex(int index) {
-        String beach = null;
+        String beachName = null;
         if (index < beachNames.length)
-            beach = beachNames[index];
+            beachName = beachNames[index];
         else
             System.out.println("Invalid index value: " + index);
-        return beach;
+        return beachName;
     }
-
-    public int getIndexByBeach(String beach) {
-        int idx = 0;
-        if (beach != null) {
+    public int getIndexByBeach(String beachName) {
+        int index = 0;
+        if (beachName != null) {
             for (String item : beachNames) {
-                if (item != null && item.equals(beach)) {
-                    return idx;
+                if (item != null && item.equals(beachName)) {
+                    return index;
                 }
-                idx++;
+                index++;
             }
-        } else System.out.println("beach name not found: " + beach);
-        return -1;
+        } else System.out.println("beach name not found: " + beachName);
+        return index;
+    }
+    public boolean updateBeach(String existingName, String updateName) {
+        boolean isUpdated = false;
+        int index = 0;
+        if (updateName != null && !updateName.isEmpty()) {
+            for (String name : beachNames) {
+                if (existingName.equals(name)) {
+                    beachNames[index] = updateName;
+                    isUpdated = true;
+                }
+                index++;
+            }
+            if (!isUpdated) System.out.println("The name is not found");
+        } else {
+            System.out.println("Invalid Input..");
+        }
+        return isUpdated;
+    }
+    public boolean deleteBeach(String deleteName) {
+        boolean isDeleted = false;
+        int index = 0;
+        if (deleteName != null && !deleteName.isEmpty()) {
+            for (String name : beachNames) {
+                if (deleteName.equals(name)) {
+                    beachNames[index] = null;
+                    isDeleted = true;
+                }
+                index++;
+            }
+        } else {
+            System.out.println("Invalid Input..");
+        }
+        return isDeleted;
     }
 }

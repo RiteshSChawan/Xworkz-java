@@ -1,7 +1,8 @@
-public class GoaExecutor {
+import java.util.Scanner;
+class GoaExecutor {
     public static void main(String[] args) {
         Goa goa = new Goa();
-        goa.addBeach("Baga Beach");
+        /* goa.addBeach("Baga Beach");
         goa.addBeach("Calangute Beach");
         goa.addBeach("Anjuna Beach");
         goa.addBeach("Palolem Beach");
@@ -20,12 +21,22 @@ public class GoaExecutor {
         goa.addBeach("Bogmalo Beach");
         goa.addBeach("Chapora Beach");
         goa.addBeach("Querim Beach");
+        goa.getBeachDetails(); */
+		
+		Scanner sc = new Scanner(System.in);
+         for (int index = 0; index < goa.beachNames.length; index++) {
+            System.out.println("Enter beach name : ");
+            goa.addBeachName(sc.nextLine());
+        }
         goa.getBeachDetails();
-        int index = 2;
-        String beachByIndex = goa.getBeachByIndex(index);
-        System.out.println("Beach at index " + index + " is: " + beachByIndex);
-        String beachName = "Vagator Beach";
-        int beachIndex = goa.getIndexByBeach(beachName);
-        System.out.println("Index of " + beachName + " is: " + beachIndex);
+		sc.close();
+		
+        int index = 3;
+        System.out.println("Beach at index " + index + " is: " + goa.getBeachByIndex(index));
+        System.out.println("Index of Baga Beach: " + goa.getIndexByBeach("Baga Beach"));
+        System.out.println("Is updated: " + goa.updateBeach("Baga Beach", "Baga Beach North Goa"));
+        goa.getBeachDetails();
+        System.out.println("Is deleted: " + goa.deleteBeach("Anjuna Beach"));
+        goa.getBeachDetails();
     }
 }

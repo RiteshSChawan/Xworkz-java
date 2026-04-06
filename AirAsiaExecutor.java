@@ -1,7 +1,9 @@
-public class AirAsiaExecutor {
+import java.util.Scanner;
+class AirAsiaExecutor {
     public static void main(String[] args) {
         AirAsia airAsia = new AirAsia();
-        airAsia.addPassenger("Ravi Kumar");
+		
+        /* airAsia.addPassenger("Ravi Kumar");
         airAsia.addPassenger("Priya Sharma");
         airAsia.addPassenger("Arjun Mehta");
         airAsia.addPassenger("Sneha Patel");
@@ -31,12 +33,33 @@ public class AirAsiaExecutor {
         airAsia.addPassenger("Rekha Bansal");
         airAsia.addPassenger("Santosh Mishra");
         airAsia.addPassenger("Padma Venkat");
-        airAsia.getPassengerDetails();
+        airAsia.getPassengerDetails(); */
+		
+		Scanner sc = new Scanner(System.in);
+
+        for (int index = 0; index < airAsia.passengers.length; index++) {
+            System.out.println("Enter air asia  name : ");
+            String airAsiaName = sc.nextLine();
+            airAsia.addPassenger(airAsiaName);
+        }
+		airAsia.getPassengerDetails();
+        sc.close();
+		
         int index = 5;
         String passengerByIndex = airAsia.getPassengerByIndex(index);
         System.out.println("Passenger at index " + index + " is: " + passengerByIndex);
+		
         String passengerName = "Kiran Rao";
         int passengerIndex = airAsia.getIndexByPassenger(passengerName);
         System.out.println("Index of " + passengerName + " is: " + passengerIndex);
+		
+        boolean isUpdated = airAsia.updatePassenger("Ravi Kumar", "Ravi Verma");
+        System.out.println("is updated " + isUpdated);
+        airAsia.getPassengerDetails();
+		
+        boolean isDeleted = airAsia.deletePassenger("Santosh Mishra");
+        System.out.println("is deleted " + isDeleted);
+        airAsia.getPassengerDetails();
+		
     }
 }

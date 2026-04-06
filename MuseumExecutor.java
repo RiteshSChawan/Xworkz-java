@@ -1,7 +1,8 @@
-public class MuseumExecutor {
+import java.util.Scanner;
+class MuseumExecutor {
     public static void main(String[] args) {
         Museum museum = new Museum();
-        museum.addMonument("Taj Mahal");
+        /* museum.addMonument("Taj Mahal");
         museum.addMonument("Red Fort");
         museum.addMonument("Qutub Minar");
         museum.addMonument("Hampi");
@@ -17,12 +18,22 @@ public class MuseumExecutor {
         museum.addMonument("Gateway of India");
         museum.addMonument("Fatehpur Sikri");
         museum.addMonument("Sanchi Stupa");
-        museum.getMonumentDetails();
-        int index = 3;
-        String monumentByIndex = museum.getMonumentByIndex(index);
-        System.out.println("Monument at index " + index + " is: " + monumentByIndex);
-        String monumentName = "Charminar";
-        int monumentIndex = museum.getIndexByMonument(monumentName);
-        System.out.println("Index of " + monumentName + " is: " + monumentIndex);
+        museum.getMonumentDetails(); */
+		
+		Scanner sc = new Scanner(System.in);
+        for (int index = 0; index < museum.historicalMonuments.length; index++) {
+            System.out.println("Enter historical monument name : ");
+            museum.addHistoricalMonument(sc.nextLine());
+        }
+        museum.getHistoricalMonumentDetails();
+		sc.close();
+		
+        int index = 4;
+        System.out.println("Historical monument at index " + index + " is: " + museum.getHistoricalMonumentByIndex(index));
+        System.out.println("Index of Taj Mahal: " + museum.getIndexByHistoricalMonument("Taj Mahal"));
+        System.out.println("Is updated: " + museum.updateHistoricalMonument("Taj Mahal", "Taj Mahal - Agra"));
+        museum.getHistoricalMonumentDetails();
+        System.out.println("Is deleted: " + museum.deleteHistoricalMonument("Qutub Minar"));
+        museum.getHistoricalMonumentDetails();
     }
 }

@@ -1,7 +1,8 @@
-public class PhonepeExecutor {
+import java.util.Scanner;
+class PhonepeExecutor {
     public static void main(String[] args) {
         Phonepe phonepe = new Phonepe();
-        phonepe.addInsurance("Health Insurance");
+        /* phonepe.addInsurance("Health Insurance");
         phonepe.addInsurance("Life Insurance");
         phonepe.addInsurance("Car Insurance");
         phonepe.addInsurance("Bike Insurance");
@@ -28,12 +29,22 @@ public class PhonepeExecutor {
         phonepe.addInsurance("Student Insurance");
         phonepe.addInsurance("Senior Citizen Insurance");
         phonepe.addInsurance("Maternity Insurance");
+        phonepe.getInsuranceDetails(); */
+		
+        Scanner sc = new Scanner(System.in);
+		for (int index = 0; index < phonepe.insuranceNames.length; index++) {
+            System.out.println("Enter insurance name : ");
+            phonepe.addInsuranceName(sc.nextLine());
+        }
+        phonepe.getInsuranceDetails();		
+		sc.close();
+
+        int index = 3;
+        System.out.println("Insurance at index " + index + " is: " + phonepe.getInsuranceByIndex(index));
+        System.out.println("Index of Term Insurance: " + phonepe.getIndexByInsurance("Term Insurance"));
+        System.out.println("Is updated: " + phonepe.updateInsurance("Term Insurance", "Premium Term Life Insurance"));
         phonepe.getInsuranceDetails();
-        int index = 4;
-        String insuranceByIndex = phonepe.getInsuranceByIndex(index);
-        System.out.println("Insurance at index " + index + " is: " + insuranceByIndex);
-        String insuranceName = "Travel Insurance";
-        int insuranceIndex = phonepe.getIndexByInsurance(insuranceName);
-        System.out.println("Index of " + insuranceName + " is: " + insuranceIndex);
+        System.out.println("Is deleted: " + phonepe.deleteInsurance("Bike Insurance"));
+        phonepe.getInsuranceDetails();
     }
 }

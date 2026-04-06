@@ -1,44 +1,73 @@
 public class ECommerce {
     public String productNames[] = new String[26];
     int index;
-
-    public boolean addProduct(String product) {
+    public boolean addProductName(String productName) {
         boolean isAdded = false;
         if (index < productNames.length) {
-            if (product != null && !product.isEmpty()) {
-                productNames[index++] = product;
+            if (productName != null && !productName.isEmpty()) {
+                productNames[index++] = productName;
                 isAdded = true;
-            } else System.out.println(product + " is invalid");
+            } else System.out.println(productName + " is invalid");
         } else
-            System.out.println("product index is full");
+            System.out.println("productNames index is full");
         return isAdded;
     }
-
     public void getProductDetails() {
         System.out.println("The products are : \n");
         for (String item : productNames)
             if (item != null) System.out.println(item);
     }
-
     public String getProductByIndex(int index) {
-        String product = null;
+        String productName = null;
         if (index < productNames.length)
-            product = productNames[index];
+            productName = productNames[index];
         else
             System.out.println("Invalid index value: " + index);
-        return product;
+        return productName;
     }
-
-    public int getIndexByProduct(String product) {
-        int idx = 0;
-        if (product != null) {
+    public int getIndexByProduct(String productName) {
+        int index = 0;
+        if (productName != null) {
             for (String item : productNames) {
-                if (item != null && item.equals(product)) {
-                    return idx;
+                if (item != null && item.equals(productName)) {
+                    return index;
                 }
-                idx++;
+                index++;
             }
-        } else System.out.println("product name not found: " + product);
-        return -1;
+        } else System.out.println("product name not found: " + productName);
+        return index;
+    }
+    public boolean updateProduct(String existingName, String updateName) {
+        boolean isUpdated = false;
+        int index = 0;
+        if (updateName != null && !updateName.isEmpty()) {
+            for (String name : productNames) {
+                if (existingName.equals(name)) {
+                    productNames[index] = updateName;
+                    isUpdated = true;
+                }
+                index++;
+            }
+            if (!isUpdated) System.out.println("The name is not found");
+        } else {
+            System.out.println("Invalid Input..");
+        }
+        return isUpdated;
+    }
+    public boolean deleteProduct(String deleteName) {
+        boolean isDeleted = false;
+        int index = 0;
+        if (deleteName != null && !deleteName.isEmpty()) {
+            for (String name : productNames) {
+                if (deleteName.equals(name)) {
+                    productNames[index] = null;
+                    isDeleted = true;
+                }
+                index++;
+            }
+        } else {
+            System.out.println("Invalid Input..");
+        }
+        return isDeleted;
     }
 }

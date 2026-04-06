@@ -1,7 +1,8 @@
-public class WonderlaExecutor {
+import java.util.Scanner;
+class WonderlaExecutor {
     public static void main(String[] args) {
         Wonderla wonderla = new Wonderla();
-        wonderla.addWaterGame("Wave Pool");
+        /* wonderla.addWaterGame("Wave Pool");
         wonderla.addWaterGame("Lazy River");
         wonderla.addWaterGame("Water Slide");
         wonderla.addWaterGame("Rain Disco");
@@ -21,12 +22,23 @@ public class WonderlaExecutor {
         wonderla.addWaterGame("Cliff Jump");
         wonderla.addWaterGame("Rapid River");
         wonderla.addWaterGame("Super Flume");
+        wonderla.getWaterGameDetails(); */
+
+		Scanner sc = new Scanner(System.in);
+        for (int index = 0; index < wonderla.waterGames.length; index++) {
+            System.out.println("Enter water game name : ");
+            wonderla.addWaterGame(sc.nextLine());
+        }
+        wonderla.getWaterGameDetails();		
+		sc.close();
+		
+        int index = 4;
+        System.out.println("Water game at index " + index + " is: " + wonderla.getWaterGameByIndex(index));
+        System.out.println("Index of Wave Pool: " + wonderla.getIndexByWaterGame("Wave Pool"));
+        System.out.println("Is updated: " + wonderla.updateWaterGame("Wave Pool", "Mega Wave Pool"));
         wonderla.getWaterGameDetails();
-        int index = 5;
-        String gameByIndex = wonderla.getWaterGameByIndex(index);
-        System.out.println("Water game at index " + index + " is: " + gameByIndex);
-        String gameName = "Boomerang";
-        int gameIndex = wonderla.getIndexByWaterGame(gameName);
-        System.out.println("Index of " + gameName + " is: " + gameIndex);
+        System.out.println("Is deleted: " + wonderla.deleteWaterGame("Lazy River"));
+        wonderla.getWaterGameDetails();
+ 
     }
 }
